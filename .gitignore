@@ -1,0 +1,13 @@
+.claude/settings.local.json
+
+# Flutter/Dart
+hayaoshi_app/build/
+hayaoshi_app/.dart_tool/
+hayaoshi_app/.flutter-plugins
+hayaoshi_app/.flutter-plugins-dependencies
+hayaoshi_app/android/.gradle/
+hayaoshi_app/android/local.properties
+hayaoshi_app/android/key.properties
+hayaoshi_app/**/*.iml
+hayaoshi_app/.idea/
+
