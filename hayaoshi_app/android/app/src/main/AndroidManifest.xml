@@ -33,12 +33,9 @@
         <meta-data
             android:name="flutterEmbedding"
             android:value="2" />
-        <!-- TODO: 本番リリース前に、Googleのテスト用ID(下記)を
-             AdMobで取得した自分のApp IDに置き換えること。
-             テストIDのまま申請するとAdMobの規約違反になる。 -->
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
-            android:value="ca-app-pub-3940256099942544~3347511713" />
+            android:value="ca-app-pub-9226194777187958~6175459861" />
     </application>
     <!-- Required to query activities that can process text, see:
          https://developer.android.com/training/package-visibility and

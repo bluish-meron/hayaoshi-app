@@ -1,12 +1,20 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 
 import '../main.dart';
 import '../services/app_services.dart';
 
+/// 本番用の広告ユニットID(AdMobで取得したもの)。
+const _prodBannerAdUnitId = 'ca-app-pub-9226194777187958/6700671103';
+
 /// Googleが配布しているテスト用バナー広告ユニットID。
-/// 本番リリース前に、AdMobで取得した自分の広告ユニットIDに置き換えること。
+/// デバッグ中に本番IDを使うと無効なトラフィックとみなされる恐れがあるため、
+/// リリースビルドのときだけ本番IDを使う。
 const _testBannerAdUnitId = 'ca-app-pub-3940256099942544/6300978111';
+
+String get _bannerAdUnitId =>
+    kReleaseMode ? _prodBannerAdUnitId : _testBannerAdUnitId;
 
 /// プレミアム購入済みなら何も表示しない、それ以外はバナー広告を表示するウィジェット。
 class BannerAdBox extends StatefulWidget {
@@ -44,7 +52,7 @@ class _BannerAdBoxState extends State<BannerAdBox> {
 
   void _loadAd() {
     final ad = BannerAd(
-      adUnitId: _testBannerAdUnitId,
+      adUnitId: _bannerAdUnitId,
       size: AdSize.banner,
       request: const AdRequest(),
       listener: BannerAdListener(
